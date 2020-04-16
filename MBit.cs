@@ -1,0 +1,6 @@
+namespace GameTheGame
+{
+    class MBit {
+        
+    }
+}

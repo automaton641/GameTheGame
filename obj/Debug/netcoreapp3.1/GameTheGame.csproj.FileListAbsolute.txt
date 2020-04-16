@@ -1,0 +1,13 @@
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\GameTheGame.exe
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\GameTheGame.deps.json
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\GameTheGame.runtimeconfig.json
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\GameTheGame.runtimeconfig.dev.json
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\GameTheGame.dll
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\GameTheGame.pdb
+C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.csprojAssemblyReference.cache
+C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.csproj.CoreCompileInputs.cache
+C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.AssemblyInfoInputs.cache
+C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.AssemblyInfo.cs
+C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.dll
+C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.pdb
+C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.genruntimeconfig.cache
