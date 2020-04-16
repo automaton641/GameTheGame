@@ -13,9 +13,6 @@ namespace GameTheGame
     {
         public MCircularListNode<Type> firstNode;
         public MCircularListNode<Type> lastNode;
-        public MCircularList()
-        {
-        }
         public void AddNode(MCircularListNode<Type> node) {
             if (firstNode == null && lastNode == null)
             {
