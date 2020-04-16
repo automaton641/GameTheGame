@@ -1,0 +1,14 @@
+{
+  "name": "electronthegame",
+  "version": "1.0.0",
+  "description": "GUI",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "automaton641",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.2"
+  }
+}
