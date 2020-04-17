@@ -63,20 +63,107 @@ namespace GameTheGame
             }
         }
         public static MInteger Add(MInteger firstInteger, MInteger secondInteger) {
-            return Add(firstInteger, secondInteger, false);
+            MInteger result = new MInteger(firstInteger);
+            MInteger counter = new MInteger();
+            while (!counter.Equals(secondInteger))
+            {
+                result.Next();
+                counter.Next();
+            }
+            return result;
+        }
+        public byte GetByte(MInteger index) {
+            if (IsNull())
+            {
+                return 0;
+            }
+            MCircularListNode<bool> node = list.firstNode;
+            MInteger counter = new MInteger();
+            bool iterate = true;
+            while (iterate)
+            {
+                if (counter.Equals(index))
+                {
+                    iterate = false;
+                }
+                else
+                {
+                    if (object.ReferenceEquals(node, list.lastNode))
+                    {
+                        return 0;
+                    }
+                    node = node.nextNode;
+                }
+            }
+            MInteger limit = new MInteger("8");
+            counter = new MInteger();
+            byte result = 0;
+            byte adder = 1;
+            while (true)
+            {
+                if (counter.Equals(index))
+                {
+                    return result;
+                }
+                if (object.ReferenceEquals(node, list.lastNode))
+                {
+                    return result;
+                }
+                if (node.nodeValue)
+                {
+                    result += adder;
+                }
+                adder *= 2;
+                node = node.nextNode;
+            }
+        }
+        public MInteger Next() {
+            if (IsNull())
+            {
+                return Append(true);
+            }
+            MCircularListNode<bool> node = list.firstNode;
+            while (true)
+            {
+                if (node.nodeValue)
+                {
+                    node.nodeValue = false;
+                } 
+                else
+                {
+                    node.nodeValue = true;
+                    return this;
+                }
+                if (object.ReferenceEquals(node, list.lastNode))
+                {
+                    return Append(true);
+                }
+                node = node.nextNode;
+            }
         }
         public MInteger AddOneToLast() {
-            list.lastNode.nodeValue = false;
+            if (!IsNull())
+            {
+                if (list.lastNode.nodeValue)
+                {
+                    list.lastNode.nodeValue = false;
+                }
+                else
+                {
+                    list.lastNode.nodeValue = true;
+                    return this;
+                }
+            }
             return Append(true);
         }
-        public static MInteger MayAddOneToLast(MInteger integer, bool carry) {
-            if (carry)
+        public static MInteger MayAddOneToLast(MInteger integer, bool addOneToLast) {
+            if (addOneToLast)
             {
                 return (new MInteger(integer)).AddOneToLast();
             }
             return new MInteger(integer);
         }
-        public static MInteger Add(MInteger firstInteger, MInteger secondInteger, bool carry) {
+        public static MInteger AddOptimized(MInteger firstInteger, MInteger secondInteger, bool carry) {
             if(firstInteger.IsNull() || secondInteger.IsNull())
             {
                 if (firstInteger.IsNull()) 
@@ -90,10 +177,13 @@ namespace GameTheGame
                     
             }
             (bool resultCarry, bool bit) = AddBits(firstInteger.FirstBit(), secondInteger.FirstBit(), carry);
-            return (new MInteger(bit)).Append(Add(firstInteger.RemoveFirst(), secondInteger.RemoveFirst(), resultCarry));
+            return (new MInteger(bit)).Append(AddOptimized(firstInteger.RemoveFirst(), secondInteger.RemoveFirst(), resultCarry));
         }
         public bool FirstBit() {
             return list.firstNode.nodeValue;
+        }
+        public bool LastBit() {
+            return list.lastNode.nodeValue;
         }
         public MInteger RemoveFirst() {
             if (IsNull())
@@ -128,12 +218,42 @@ namespace GameTheGame
             while (true)
             {
                 Append(node.nodeValue);
-                if (object.Equals(node, integer.list.lastNode)) {
+                if (object.ReferenceEquals(node, integer.list.lastNode)) {
                     return this;
                 }
                 node = node.nextNode;
             }
         }
+        public bool EqualsInteger(MInteger integer) {
+            if (IsNull()) {
+                if (integer.IsNull()) {
+                   return true;
+                }
+                return false;
+            }
+            if (integer.IsNull()) {
+                   return false;
+            }
+            if (FirstBit() == integer.FirstBit())
+            {
+                return RemoveFirst().EqualsInteger(integer.RemoveFirst());
+            }
+            return false;
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            return EqualsInteger((MInteger)obj);
+        }
+        
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         public override string ToString()
         {
             string representation =  "Integer: ";

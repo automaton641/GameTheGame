@@ -11,3 +11,9 @@ C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.
 C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.dll
 C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.pdb
 C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.genruntimeconfig.cache
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\autom\Documents\dotnet\GameTheGame\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\autom\Documents\dotnet\GameTheGame\obj\Debug\netcoreapp3.1\GameTheGame.csproj.CopyComplete
